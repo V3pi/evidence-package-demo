@@ -1,0 +1,60 @@
+{
+  "files": [
+    {
+      "path": "summary.csv",
+      "sha256": "f55276d002d19401b93cc9520c6a2c0a9de89d565152a6f879ae1142ba1e8d12",
+      "size_bytes": 289
+    },
+    {
+      "path": "divergence.csv",
+      "sha256": "b93c970fe55cb14a6d5e71f16f8c0e607f66f2ee01d4a91638d5e33f50f648a0",
+      "size_bytes": 24193
+    },
+    {
+      "path": "count_deltas.csv",
+      "sha256": "ba49cd214d09916fea998ccecabe8070aa62d2602b51b12c8989437fe6897e81",
+      "size_bytes": 22153
+    },
+    {
+      "path": "location_detail.csv",
+      "sha256": "d1d83e79a0c177bd7946f3d29c1748fdc2465e2401792648d2829dd7da5e61c8",
+      "size_bytes": 64127
+    },
+    {
+      "path": "concordance.csv",
+      "sha256": "e75673954386950581cf1b027a2e8c5f1752e5518b11a84a83e7c190d0b12c42",
+      "size_bytes": 70950
+    },
+    {
+      "path": "witnesses_concordance.csv",
+      "sha256": "c472bc8a9a80a0696480f4d4ebfbfe51808a383022ccc2024327cdae938acbf9",
+      "size_bytes": 3334819
+    },
+    {
+      "path": "witnesses_divergence.csv",
+      "sha256": "6ba66229cde66365aa2f979c393e972701506581600250a7c81d477f1f97e84a",
+      "size_bytes": 3723
+    },
+    {
+      "path": "provenance.json",
+      "sha256": "428911eb71209f4f05ccf81800aac6d9eb66ba91f622a847d505e5b8424fad37",
+      "size_bytes": 852
+    },
+    {
+      "path": "README.txt",
+      "sha256": "6f2958a8678e00cc2e1967c7cb4225985e7395b1be46f97b3676dfb336b926d7",
+      "size_bytes": 4174
+    }
+  ],
+  "hashes": {
+    "inventory_sha256": "be41689232cebe304265c2aa869d243eaf9760f419d3e5d516b831c089921ff0"
+  },
+  "package": {
+    "generated_at_utc": "2026-02-13T00:25:38Z",
+    "generator_name": "V3pi",
+    "generator_version": "1.0",
+    "package_label": "V3pi Public Demo — HIPAA 164.520 Verification",
+    "run_id": "81657167bc43b049"
+  },
+  "schema_version": "1.0.0"
+}

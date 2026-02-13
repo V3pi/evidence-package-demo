@@ -1,0 +1,24 @@
+{
+  "generator": "V3pi",
+  "generated_utc": "2026-02-13T00:25:38Z",
+  "service_tier": 6,
+  "client_name": "V3pi Public Demo — HIPAA 164.520 Verification",
+  "determination": "INCONSISTENT",
+  "reference": {
+    "document": "HIPAA 164 520 Original"
+  },
+  "evaluated": {
+    "document": "HIPAA 164 520 Evaluated"
+  },
+  "policy": {
+    "Composite Patterns": "must match exactly",
+    "Recurrent Patterns": "must match exactly",
+    "Normalized Forms": "differences reported without affecting determination"
+  },
+  "input_artifact_hashes": {
+    "compare_manifest": "f0254bc98452bd52c9e4517f028698b3a0152a0b891261b90460a75d2fd8b4f2",
+    "concordance_forms": "33063ce808e2a808e16af95eb481328b45d48019abcbe8391ab82bef974aef34",
+    "divergence_forms": "98b42803f1feda0e6a96367c800b74c0bbe53aab60ce09e7b5afab21b4e79624"
+  },
+  "schema_version": "1.0.2"
+}
