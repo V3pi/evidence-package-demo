@@ -1,0 +1,74 @@
+name: Build V3pi Verifier Binaries
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            artifact: v3pi-verify-linux-x64
+            pyinstaller_name: v3pi-verify-linux-x64
+          - os: windows-latest
+            artifact: v3pi-verify-windows-x64.exe
+            pyinstaller_name: v3pi-verify-windows-x64
+          - os: macos-latest
+            artifact: v3pi-verify-macos-arm64
+            pyinstaller_name: v3pi-verify-macos-arm64
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install PyInstaller
+        run: pip install pyinstaller
+
+      - name: Build binary
+        run: pyinstaller --onefile --name ${{ matrix.pyinstaller_name }} v3pi_verify.py
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: dist/${{ matrix.pyinstaller_name }}*
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: binaries
+
+      - name: List binaries
+        run: find binaries -type f
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.0
+          name: "V3pi Verifier v1.0.0"
+          body: |
+            Standalone verification utility for V3pi evidence packages.
+            
+            Download the binary for your platform and run:
+            ```
+            ./v3pi-verify-linux-x64 --path ./evidence-package
+            ```
+            
+            No Python installation required. No network access. Read-only.
+          files: |
+            binaries/v3pi-verify-linux-x64/*
+            binaries/v3pi-verify-windows-x64.exe/*
+            binaries/v3pi-verify-macos-arm64/*
